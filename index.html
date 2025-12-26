@@ -1,7 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Jurnal Mengajar Guru IPA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <h1>Jurnal Guru IPA</h1>
-    <p>Selamat datang di jurnal saya.</p>
+
+<h1>Jurnal Mengajar Guru IPA</h1>
+
+<form id="jurnalForm">
+    <label>Tanggal:</label><br>
+    <input type="date" id="tanggal"><br><br>
+
+    <label>Kelas:</label><br>
+    <input type="text" id="kelas" placeholder="Contoh: IX A"><br><br>
+
+    <label>Materi:</label><br>
+    <textarea id="materi" rows="3"></textarea><br><br>
+
+    <label>Kehadiran:</label><br>
+    <input type="number" id="hadir" placeholder="Jumlah hadir"><br><br>
+
+    <button type="button" onclick="simpanData()">Simpan</button>
+</form>
+</form>
+
+<button onclick="window.print()">🖨️ Cetak Jurnal</button>
+
+<h2>Data Jurnal</h2>
+<table border="1" id="tabelJurnal">
+    <thead>
+        <tr>
+            <th>Tanggal</th>
+            <th>Kelas</th>
+            <th>Materi IPA</th>
+            <th>Hadir</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<!-- MULAI ABSENSI -->
+<hr>
+<h2>Absensi Siswa</h2>
+
+<form id="absensiForm">
+    <input type="text" id="namaSiswa" placeholder="Nama Siswa" required>
+
+    <select id="status">
+        <option value="">Status Kehadiran</option>
+        <option value="Hadir">Hadir</option>
+        <option value="Sakit">Sakit</option>
+        <option value="Izin">Izin</option>
+        <option value="Alfa">Alfa</option>
+    </select>
+
+    <button type="button" onclick="simpanAbsensi()">Simpan Absensi</button>
+</form>
+
+<ul id="daftarAbsensi"></ul>
+<!-- SELESAI ABSENSI -->
+
+<hr>
+
+<h2>Data Jurnal</h2>
+<ul id="hasil"></ul>
+
+<script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Jurnal Mengajar Guru IPA SMP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>📘 Jurnal Mengajar Guru IPA SMP</h1>
+
+<h2>Identitas Pembelajaran</h2>
+<label>Semester</label>
+<select id="semester">
+    <option>Semester Ganjil</option>
+    <option>Semester Genap</option>
+</select>
+
+<label>Kelas</label>
+<select id="kelas">
+    <option>Kelas 7</option>
+    <option>Kelas 8</option>
+    <option>Kelas 9</option>
+</select>
+
+<label>Tanggal</label>
+<input type="date" id="tanggal">
+
+<label>Mata Pelajaran</label>
+<input type="text" id="mapel" value="IPA">
+
+<label>Materi Pembelajaran</label>
+<textarea id="materi"></textarea>
+
+<button onclick="simpanJurnal()">💾 Simpan Jurnal</button>
+
+<hr>
+
+<h2>👥 Absensi Siswa</h2>
+<label>Nama Siswa</label>
+<input type="text" id="namaSiswa">
+
+<label>Status</label>
+<select id="status">
+    <option>Hadir</option>
+    <option>Izin</option>
+    <option>Sakit</option>
+    <option>Alpha</option>
+</select>
+
+<button onclick="simpanAbsensi()">💾 Simpan Absensi</button>
+
+<hr>
+
+<h2>📋 Rekap Data</h2>
+<ul id="output"></ul>
+
+<script src="script.js"></script>
 </body>
 </html>
